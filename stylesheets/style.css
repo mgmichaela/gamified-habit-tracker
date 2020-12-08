@@ -1,0 +1,461 @@
+/********
+COLOUR PALLETTE
+********/
+
+button {
+  outline: none;
+}
+
+img {
+  width: 100%;
+}
+
+nav {
+  background: var(--black);
+  position: relative;
+  float: left;
+  width: 35vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header {
+  color: var(--white);
+  padding-top: 20px;
+  width: 100%;
+  height: 5rem;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#heatmap {
+  height: 9rem;
+  width: 60%;
+  position: absolute;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(auto-fit, 15px);
+  grid-template-columns: repeat(auto-fit, 15px);
+  grid-gap: 0.3rem;
+  bottom: 8rem;
+}
+
+.heatmap-div {
+  width: 15px;
+  height: 15px;
+  background-color: var(--alien-one);
+}
+
+.heatmap-div-placeholder {
+  box-shadow: none;
+}
+
+main {
+  position: absolute;
+  right: 0;
+  width: 64vw;
+  height: 100vh;
+  font-family: 'sprites';
+}
+
+#calendar-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#calendar {
+  display: grid;
+  margin: auto;
+  width: 410px;
+  margin-top: 15vh;
+  grid-template-columns: repeat(auto-fill, 50px);
+  grid-gap: 10px;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  width: 50px;
+  height: 50px;
+}
+
+.past {
+  background: var(--black);
+  font-family: 'sprites';
+  padding: 0.3rem 0 0 0.3rem;
+  font-size: 2.7rem;
+}
+
+.future {
+  font-family: 'space_invaders';
+  font-size: 1.7rem;
+  color: var(--white);
+  opacity: 0.2;
+  padding: 0.3rem 0 0 0.2rem;
+}
+
+.current {
+  color: var(--white);
+  font-family: 'space_invaders';
+  font-size: 1.7rem;
+  padding: 0.3rem 0 0 0.2rem;
+  animation: infinite pulse 5s ease-in-out;
+  text-shadow: 2px 2px 6px var(--alien-one);
+  cursor: pointer;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(0.95);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+}
+
+.alien-1 {
+  color: var(--alien-one);
+}
+
+.alien-2 {
+  color: var(--alien-two);
+}
+
+.alien-3 {
+  color: var(--alien-three);
+}
+.alien-4 {
+  color: var(--alien-four);
+}
+.alien-5 {
+  color: var(--alien-five);
+}
+
+.clicked {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.game-start-button {
+  border:none;
+  margin: 100px 0 10px 0;
+  width: 100%;
+  height: 100px;
+  align-items: center;
+  background: none;
+  color: var(--white);
+  font-size: 2.6rem;
+  font-family: 'space_invaders';
+  position: relative;
+  
+}
+
+.ready-in {
+  flex-direction: column;
+}
+
+.countdown {
+  text-align: center;
+  line-height: 1.2;
+  position: relative;
+  font-size: 2.6rem;
+  font-family: 'space_invaders';
+  width: 100%;
+  display: flex;
+  color: var(--alien-one);
+  justify-content: center;
+  text-shadow: 2px 2px 6px var(--alien-one);
+}
+
+.countdown:focus,
+.countdown:hover {
+  transition: 1s;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.countdown:hover:before {
+  opacity: 1;
+  animation: noise-anim-2 2s infinite linear alternate-reverse;
+}
+
+.countdown:hover:after {
+  opacity: 1;
+  animation: noise-anim-1 2s infinite linear alternate-reverse;
+}
+
+.countdown::before,
+.countdown::after {
+  content: attr(data-text);
+  position: relative;
+}
+
+.countdown::before {
+  left: 2px;
+  opacity: 0;
+  transform: translateX(100%);
+  text-shadow: -1px 0 var(--alien-three);
+  background: var(--black);
+}
+
+.countdown::after {
+  text-shadow: -1px 0 var(--alien-two);
+  left: -2px;
+  opacity: 0;
+  transform: translateX(-100%);
+  background: var(--black);
+  clip-path: rect(44px, 450px, 56px, 0);
+}
+
+@keyframes noise-anim-1 {
+  0% {
+    clip-path: inset(40% 0 61% 0);
+  }
+  20% {
+    clip-path: inset(92% 0 1% 0);
+  }
+  40% {
+    clip-path: inset(43% 0 1% 0);
+  }
+  60% {
+    clip-path: inset(25% 0 58% 0);
+  }
+  80% {
+    clip-path: inset(54% 0 7% 0);
+  }
+  100% {
+    clip-path: inset(58% 0 43% 0);
+  }
+}
+@keyframes noise-anim-2 {
+  0% {
+    clip-path: inset(20% 0 41% 0);
+  }
+  20% {
+    clip-path: inset(52% 0 1% 0);
+  }
+  40% {
+    clip-path: inset(47% 0 22% 0);
+  }
+  60% {
+    clip-path: inset(30% 0 88% 0);
+  }
+  80% {
+    clip-path: inset(78% 0 7% 0);
+  }
+  100% {
+    clip-path: inset(29% 0 37% 0);
+  }
+}
+
+canvas {
+  position: absolute;
+  transition: 1s;
+  width: 100%;
+  background: transparent;
+  height: 100%;
+}
+
+.score {
+  font-size: 2rem;
+  color: var(--white);
+  z-index: 200;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+}
+
+.hi-score {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+}
+
+.game-over {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  font-size: 3rem;
+  color: var(--white);
+}
+
+#menu-bottom {
+  height: 5rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 2rem 0 2rem;
+}
+
+#plus-icon {
+  padding: 0px 0 0 2px;
+  font-size: 2.5rem;
+  background: var(--black);
+  color: var(--alien-one);
+  animation: infinite pulse 5s ease-in-out;
+  cursor: pointer;
+}
+
+#splash,
+#game-over {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  left: 50%;
+  top: 15vh;
+  width: 410px;
+  height: 50vh;
+  transform: translateX(-50%);
+}
+
+span {
+  font-size: 2rem;
+  color: var(--white);
+}
+
+form, .prompt {
+  z-index: 100;
+  display: flex;
+  position: absolute;
+  left: 50%;
+  top: 15vh;
+  width: 410px;
+  height: 50vh;
+  transform: translateX(-50%);
+  flex-direction: column;
+  justify-content: space-between;
+  margin: auto;
+  padding: 25px;
+  color: var(--white);
+  border: solid 2px var(--white);
+  border-top: solid 2px var(--alien-one);
+  border-left: solid 2px var(--alien-one);
+  box-shadow: 10px 10px 0 var(--alien-one);
+  background: var(--black);
+}
+
+form h1, .prompt {
+  font-size: 2rem;
+  text-align: center;
+}
+
+input {
+  font-family: 'space_invaders';
+  background: var(--black);
+  padding-left: 10px;
+  height: 50px;
+  color: var(--white);
+  box-shadow: none;
+  border: solid 2px var(--white);
+}
+
+#input-length {
+  border: none;
+}
+
+input:focus {
+  outline: none;
+  border: solid 2px var(--alien-one);
+}
+
+#habit-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: none;
+  width: 100%;
+  padding: 20px;
+  position: absolute;
+  top: 5rem;
+}
+
+.habit-list-item {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px 10px 20px;
+  background-color: var(--black);
+  box-shadow: 2px 2px 0 var(--alien-one);
+  border: solid 2px var(--white);
+  border-top: solid 2px var(--alien-one);
+  border-left: solid 2px var(--alien-one);
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+.clicked-habit {
+  box-shadow: 2px 2px 0 var(--white);
+  border-top: solid 2px var(--white);
+  border-left: solid 2px var(--white);
+  transform: translate(2px, 2px);
+}
+
+.habit-list-item:focus-within {
+  transform: translate(0px, 0px);
+  box-shadow: 2px 2px 0 var(--alien-one);
+}
+
+.delete-button {
+  font-size: 1.5rem;
+}
+
+#form-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.save-button,
+.cancel-button,
+.delete-button {
+  display: flex;
+  width: auto;
+  height: auto;
+  padding: 5px;
+  margin: 5px;
+  background: var(--black);
+  color: var(--white);
+  box-shadow: 2px 2px 0 var(--alien-one);
+  outline: none;
+}
+
+.save-button:active,
+.cancel-button:active,
+.delete-button:active,
+.habit-list-item:active {
+  transform: translate(2px, 2px);
+  transition: 100ms;
+  box-shadow: 1px 1px 0 var(--alien-one);
+}
+
+.save-button:hover,
+.cancel-button:hover,
+.delete-button:hover {
+  color: var(--alien-one);
+}
+
+.hidden {
+  display: none;
+}

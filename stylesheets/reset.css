@@ -1,0 +1,126 @@
+/* padding and margin no longer affect sizing*/
+* {
+  box-sizing: border-box;
+}
+
+/********
+FONTS
+********/
+@font-face {
+	font-family: 'sprites';
+	src: url('../fonts/sprites.ttf');
+	src: local('sprites'), local('sprites'), url('../fonts/sprites.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'space_invaders';
+	src: url('../fonts/space-invaders.ttf');
+	src: url('../fonts/space-invaders.ttf') format('truetype');
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, button {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+    vertical-align: baseline;
+    font-family: 'space_invaders', Helvetica, sans-serif;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html,
+body {
+  --black: #000;
+  --white: rgb(255, 241, 194);
+  --alien-one: #fa138f;
+  --alien-two: #00eeff;
+  --alien-three: #c048ff;
+  --alien-four: #60ffc0;
+  --alien-five: #ffb55a;
+  --yellow: yellow;
+  --red: tomato;
+  background: var(--black);
+}
+
+input[type=range] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+
+  /* Hides the slider so custom styles can be added */
+  background: transparent; 
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 30px;
+  width: 15px;
+  background: var(--alien-one);
+  cursor: pointer;
+  margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  box-shadow: 1px 1px 0px var(--white); /* Add cool effects to your sliders! */
+}
+
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  background:var(--alien-one);
+  border: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: var(--alien-one);
+}
